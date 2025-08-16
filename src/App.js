@@ -1,52 +1,48 @@
 import React, { useState, useEffect } from "react";
-import BookCard from "./BookCard";
-import Saved from "./Saved";
 
 export default function App() {
   const [books, setBooks] = useState([]);
-  const [saved, setSaved] = useState([]);
-  const [showSaved, setShowSaved] = useState(false);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    fetch("/books")
-      .then((res) => res.json())
-      .then((data) => setBooks(data));
+    fetch("/api/books")
+      .then(res => res.json())
+      .then(data => setBooks(data));
   }, []);
 
-  const handleSwipe = (dir, book) => {
-    if (dir === "right") {
-      setSaved((prev) => [...prev, book]);
+  const handleSwipe = (direction) => {
+    if (index < books.length - 1) {
+      setIndex(index + 1);
+    } else {
+      alert("No more books!");
     }
-    setBooks((prev) => prev.filter((b) => b.id !== book.id));
   };
 
-  const handleKeyDown = (e) => {
-    if (!books.length) return;
-    const book = books[0];
-    if (e.key === "ArrowRight") handleSwipe("right", book);
-    if (e.key === "ArrowLeft") handleSwipe("left", book);
-  };
+  if (books.length === 0) return <div className="text-center mt-10">Loading books...</div>;
 
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  });
+  const book = books[index];
 
   return (
-    <div style={{ textAlign: "center", marginTop: "40px" }}>
-      <h1 style={{ marginBottom: "20px" }}>📚 Book Swipe</h1>
-      <button onClick={() => setShowSaved(!showSaved)} style={{ marginBottom: "20px" }}>
-        {showSaved ? "Back to Discover" : "Saved Books"}
-      </button>
-      {showSaved ? (
-        <Saved saved={saved} />
-      ) : (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          {books.map((book) => (
-            <BookCard key={book.id} book={book} onSwipe={handleSwipe} />
-          ))}
-        </div>
-      )}
+    <div className="flex flex-col items-center justify-center h-screen">
+      <div className="p-6 bg-white shadow-xl rounded-2xl w-80 text-center">
+        <h2 className="text-xl font-bold">{book.title}</h2>
+        <p className="text-gray-700">by {book.author}</p>
+        <p className="text-sm text-gray-500">{book.year}</p>
+      </div>
+      <div className="flex gap-4 mt-6">
+        <button
+          className="px-4 py-2 bg-red-500 text-white rounded-lg"
+          onClick={() => handleSwipe("left")}
+        >
+          Reject
+        </button>
+        <button
+          className="px-4 py-2 bg-green-500 text-white rounded-lg"
+          onClick={() => handleSwipe("right")}
+        >
+          Save
+        </button>
+      </div>
     </div>
   );
 }
