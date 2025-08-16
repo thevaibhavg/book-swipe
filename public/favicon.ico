@@ -1,0 +1,3 @@
+git add public
+git commit -m "Add public folder with index.html for build"
+git push origin main
