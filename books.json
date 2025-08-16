@@ -1,0 +1,22 @@
+[
+  { "id": 1, "title": "A Fine Balance", "author": "Rohinton Mistry", "year": 1995 },
+  { "id": 2, "title": "The God of Small Things", "author": "Arundhati Roy", "year": 1997 },
+  { "id": 3, "title": "Midnight’s Children", "author": "Salman Rushdie", "year": 1981 },
+  { "id": 4, "title": "The White Tiger", "author": "Aravind Adiga", "year": 2008 },
+  { "id": 5, "title": "The Inheritance of Loss", "author": "Kiran Desai", "year": 2006 },
+  { "id": 6, "title": "An Obedient Father", "author": "Akhil Sharma", "year": 2000 },
+  { "id": 7, "title": "Sacred Games", "author": "Vikram Chandra", "year": 2006 },
+  { "id": 8, "title": "The Palace of Illusions", "author": "Chitra Banerjee Divakaruni", "year": 2008 },
+  { "id": 9, "title": "Family Matters", "author": "Rohinton Mistry", "year": 2002 },
+  { "id": 10, "title": "Sea of Poppies", "author": "Amitav Ghosh", "year": 2008 },
+  { "id": 11, "title": "The Hungry Tide", "author": "Amitav Ghosh", "year": 2004 },
+  { "id": 12, "title": "Clear Light of Day", "author": "Anita Desai", "year": 1980 },
+  { "id": 13, "title": "Fasting, Feasting", "author": "Anita Desai", "year": 1999 },
+  { "id": 14, "title": "Narcopolis", "author": "Jeet Thayil", "year": 2012 },
+  { "id": 15, "title": "Burnt Shadows", "author": "Kamila Shamsie", "year": 2009 },
+  { "id": 16, "title": "Home Fire", "author": "Kamila Shamsie", "year": 2017 },
+  { "id": 17, "title": "The Shadow Lines", "author": "Amitav Ghosh", "year": 1988 },
+  { "id": 18, "title": "English, August", "author": "Upamanyu Chatterjee", "year": 1988 },
+  { "id": 19, "title": "Serious Men", "author": "Manu Joseph", "year": 2010 },
+  { "id": 20, "title": "The Lowland", "author": "Jhumpa Lahiri", "year": 2013 }
+]
